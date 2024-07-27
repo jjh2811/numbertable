@@ -1,8 +1,17 @@
-# React + Vite
+## 설치
+- 소스코드 받기 및 프로젝트 루트 디렉토리로 이동
+```sh
+git clone https://github.com/jjh2811/numbertable
+cd numbertable
+```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 필요 패키지 설치 ( Node.js가 없다면 미리 설치 할 것 )
+```sh
+npm install
+```
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 빌드 
+```sh
+npm run build
+```
+- dist 디렉토리에 빌드된 파일들 생성
