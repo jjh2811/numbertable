@@ -98,7 +98,7 @@ function NumberTable() {
           }
         }
         if (table[row][col] === 0) {
-          ctx.strokeStyle = '#F0F0F0';
+          ctx.strokeStyle = COLORS.WHITE;
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.moveTo(x, y);
@@ -175,7 +175,7 @@ function NumberTable() {
       justifyContent: 'center',
       height: '100vh',
       width: '100vw',
-      backgroundColor: '#f0f0f0'
+      backgroundColor: '#ffffff'
     }}>
       <canvas
         ref={canvasRef}
