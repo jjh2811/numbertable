@@ -32,8 +32,8 @@ function getNumberColor(number) {
   const colorRanges = [
     [1, 10, COLORS.YELLOW],
     [11, 20, COLORS.BLUE],
-    [21, 30, COLORS.DARK_GRAY],
-    [31, 40, COLORS.RED],
+    [21, 30, COLORS.RED],
+    [31, 40, COLORS.DARK_GRAY],
     [41, 45, COLORS.DARK_GREEN]
   ];
   return colorRanges.find(([start, end]) => number >= start && number <= end)?.[2] || COLORS.BLACK;
