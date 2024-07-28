@@ -98,7 +98,7 @@ function NumberTable() {
           }
         }
         if (table[row][col] === 0) {
-          ctx.strokeStyle = COLORS.WHITE;
+          ctx.strokeStyle = '#F0F0F0';
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.moveTo(x, y);
