@@ -172,7 +172,7 @@ function NumberTable() {
       ` ${row.map((cell) => (cell === 0 ? 'xx' : cell.toString().padStart(2, '0'))).join(' ')}`
     );
 
-    const formattedTable = `${tableData.join(`\n\n`)}\n`;
+    const formattedTable = `${tableData.join(`\n\n`)}`;
 
     const blob = new Blob([formattedTable], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
