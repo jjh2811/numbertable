@@ -167,7 +167,28 @@ function NumberTable() {
     }
   };
 
-  return (
+  const handleDownload = () => {
+    const tableData = table.map((row) => {
+      return `|${row.map((cell) => {
+        if (cell === 0) return 'xx';
+        return cell.toString().padStart(2, '0');
+      }).join('|')}|`;
+    }).join('\n');
+
+    const border = `+${Array.from({ length: GRID_SIZE }, () => '--').join('+')}+\n`;
+
+    const formattedTable = `${border}${tableData.split('\n').join(`\n${border}`)}\n${border}`;
+
+    const blob = new Blob([formattedTable], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'number_table.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+return (
     <div style={{
       display: 'flex',
       flexDirection: 'column',
@@ -177,12 +198,15 @@ function NumberTable() {
       width: '100vw',
       backgroundColor: '#ffffff'
     }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 10 }}>
+        <button onClick={handleDownload}>Number Table</button>
+      </div>
       <canvas
         ref={canvasRef}
         width={WINDOW_WIDTH}
         height={WINDOW_HEIGHT}
         onClick={handleClick}
-        style={{ border: '1px solid black', maxWidth: '100%', maxHeight: '100%' }}
+        style={{ maxWidth: '100%', maxHeight: '100%' }}
       />
     </div>
   );
