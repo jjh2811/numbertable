@@ -168,16 +168,11 @@ function NumberTable() {
   };
 
   const handleDownload = () => {
-    const tableData = table.map((row) => {
-      return ` ${row.map((cell) => {
-        if (cell === 0) return 'xx';
-        return cell.toString().padStart(2, '0');
-      }).join(' ')} `;
-    }).join('\n');
+    const tableData = table.map((row) =>
+      ` ${row.map((cell) => (cell === 0 ? 'xx' : cell.toString().padStart(2, '0'))).join(' ')}`
+    );
 
-    const border = ` ${Array.from({ length: GRID_SIZE }, () => '  ').join(' ')} \n`;
-
-    const formattedTable = `${border}${tableData.split('\n').join(`\n${border}`)}\n${border}`;
+    const formattedTable = `${tableData.join(`\n\n`)}\n`;
 
     const blob = new Blob([formattedTable], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
