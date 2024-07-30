@@ -183,7 +183,17 @@ function NumberTable() {
     URL.revokeObjectURL(url);
   };
 
-return (
+  const buttonStyle = {
+    backgroundColor: COLORS.BLUE,
+    color: COLORS.WHITE,
+    padding: '5px 10px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    fontSize: '16px'
+  };
+
+  return (
     <div style={{
       display: 'flex',
       flexDirection: 'column',
@@ -194,7 +204,7 @@ return (
       backgroundColor: '#ffffff'
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 10 }}>
-        <button onClick={handleDownload}>Number Table</button>
+        <button onClick={handleDownload} style={buttonStyle}>Number Table</button>
       </div>
       <canvas
         ref={canvasRef}
